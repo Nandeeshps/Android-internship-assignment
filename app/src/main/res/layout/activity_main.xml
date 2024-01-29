@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Undo/Redo buttons -->
+    <LinearLayout
+        android:id="@+id/undoRedoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnUndo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Undo"/>
+
+        <Button
+            android:id="@+id/btnRedo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Redo"
+            android:layout_marginStart="16dp"/>
+
+
+
+    </LinearLayout>
+
+    <!-- Spinner for font styles -->
+    <Spinner
+        android:id="@+id/fontSpinner"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/undoRedoLayout"
+        android:layout_marginTop="30dp"
+        android:spinnerMode="dropdown"/>
+
+    <!-- Button to select color -->
+    <Button
+        android:id="@+id/btnSelectColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/undoRedoLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:text="Select Color" />
+
+    <!-- Container for dynamic stacking of views -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fontSpinner"
+        android:layout_marginTop="16dp">
+
+
+    <LinearLayout
+        android:id="@+id/stackContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fontSpinner"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <!-- EditText for entering text -->
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter text" />
+
+        <!-- Add Text button -->
+        <Button
+            android:id="@+id/btnAddText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onAddTextClick"
+            android:text="Add Text" />
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
